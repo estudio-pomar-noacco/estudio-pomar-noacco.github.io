@@ -1,0 +1,673 @@
+/* ==========================================================================
+   PALETA EDITORIAL SOBRIA: CARBÓN, LINO & CONTRASTE PURO
+   ========================================================================== */
+:root {
+    --bg-dark: #181818;          /* Carbón profundo */
+    --bg-dark-surface: #222222;  /* Superficie oscura para tarjetas e inputs */
+    --bg-light: #eae7df;         /* Lino / Hueso cálido */
+    --bg-light-card: #ffffff;    /* Blanco puro para tarjeta de perfil */
+    
+    --accent: #bda47e;           /* Bronce tenue para detalles sutiles */
+    --accent-hover: #ffffff;     /* Blanco en hover */
+    
+    --text-dark: #141414;        /* Texto negro/carbón */
+    --text-dark-muted: #5a5751;  /* Texto secundario en fondo claro */
+    --text-light: #ffffff;       /* Texto blanco para máxima legibilidad */
+    --text-light-muted: #a6a6a6; /* Texto secundario en fondo oscuro */
+    
+    --border-light: rgba(20, 20, 20, 0.12);
+    --border-dark: rgba(255, 255, 255, 0.15);
+    --border-dark-hover: rgba(255, 255, 255, 0.4);
+    
+    --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --max-w: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+#main-header {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#header-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#brand-logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+}
+
+#desktop-nav {
+    display: none;
+    gap: 32px;
+}
+
+#desktop-nav a {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    color: var(--text-light-muted);
+    transition: color 0.2s ease;
+}
+
+#desktop-nav a:hover {
+    color: var(--text-light);
+}
+
+#header-cta-btn {
+    display: none;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    padding: 10px 22px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#header-cta-btn:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+#mobile-menu-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: block;
+}
+
+#mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    padding: 24px;
+    gap: 16px;
+    border-top: 1px solid var(--border-dark);
+}
+
+#mobile-nav.active {
+    display: flex;
+}
+
+#mobile-nav a {
+    color: var(--text-light-muted);
+    font-size: 0.95rem;
+}
+
+#mobile-whatsapp-link {
+    color: #25d366 !important;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+#hero-section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 110px 0 90px 0;
+}
+
+#hero-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+#hero-quote-bar {
+    border-left: 2px solid rgba(255, 255, 255, 0.4);
+    padding-left: 28px;
+    max-width: 950px;
+}
+
+#hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   ESTUDIO
+   ========================================================================== */
+#estudio {
+    padding: 95px 0;
+    background-color: var(--bg-light);
+}
+
+#estudio-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
+}
+
+#estudio-heading {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+#estudio-intro {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+#estudio-detail {
+    font-size: 0.95rem;
+    color: var(--text-dark-muted);
+    margin-bottom: 28px;
+}
+
+#estudio-cta-btn {
+    display: inline-block;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 14px 32px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+#estudio-cta-btn:hover {
+    background-color: #000000;
+}
+
+#estudio-profile-card {
+    background-color: var(--bg-light-card);
+    border: 1px solid var(--border-light);
+    padding: 36px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 2px;
+}
+
+#profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#profile-photo {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 2px;
+    border: 1px solid var(--border-light);
+}
+
+#profile-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+#profile-role {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dark-muted);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+#profile-credentials,
+#profile-contact-info {
+    border-top: 1px solid var(--border-light);
+    padding-top: 16px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--text-dark-muted);
+}
+
+#profile-credentials h4,
+#profile-contact-info h4 {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   ÁREAS DE PRÁCTICA (Carbón con excelente contraste)
+   ========================================================================== */
+#areas {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 100px 0;
+}
+
+#areas-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+#areas-heading {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 48px;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--border-dark);
+    padding-bottom: 20px;
+    color: var(--text-light);
+}
+
+#areas-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+#areas-list article {
+    background-color: var(--bg-dark-surface);
+    border: 1px solid var(--border-dark);
+    padding: 36px;
+    border-radius: 2px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+#areas-list article:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-dark-hover);
+}
+
+#areas-list h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+#areas-list p {
+    font-size: 0.92rem;
+    color: var(--text-light-muted);
+    line-height: 1.65;
+}
+
+#areas-action {
+    margin-top: 48px;
+}
+
+#areas-cta-btn {
+    display: inline-block;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    padding: 14px 32px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#areas-cta-btn:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   CITA
+   ========================================================================== */
+#quote-section {
+    background-color: #dfdcd2;
+    padding: 95px 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+#quote-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+#quote-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    line-height: 1.35;
+    color: var(--text-dark);
+}
+
+#quote-author {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-dark-muted);
+    font-weight: 700;
+    margin-top: 24px;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   CONTACTO
+   ========================================================================== */
+#contacto {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 100px 0;
+}
+
+#contacto-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+}
+
+#contacto-heading {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-light);
+}
+
+#contacto-description {
+    font-size: 0.95rem;
+    color: var(--text-light-muted);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#form-row-personal,
+#form-row-topic {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* ==========================================================================
+   FORMULARIO DE CONTACTO (INPUTS, SELECT Y TEXTAREA)
+   ========================================================================== */
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    width: 100%;
+    background-color: var(--bg-dark-surface);
+    border: 1px solid var(--border-dark);
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: var(--text-light);
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.2s ease;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #737373;
+}
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+    border-color: var(--text-light);
+}
+
+#contact-form textarea {
+    resize: none;
+}
+
+/* --- Personalización visual exclusiva del Select --- */
+#contact-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a6a6a6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 44px;
+}
+
+#contact-form select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+#contact-form select option {
+    background-color: #181818;
+    color: #f1f5f9;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+}
+
+#contact-form select option:hover,
+#contact-form select option:checked {
+    background-color: #262626;
+    color: #ffffff;
+}
+
+#form-submit-btn {
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    border: none;
+    padding: 16px 32px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border-radius: 2px;
+    align-self: flex-start;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#form-submit-btn:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+#main-footer {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 60px 0;
+    border-top: 1px solid var(--border-light);
+}
+
+#footer-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+#footer-brand h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#footer-brand p {
+    font-size: 0.75rem;
+    color: var(--text-dark-muted);
+    margin-top: 4px;
+}
+
+#footer-details,
+#footer-contact {
+    font-size: 0.85rem;
+    color: var(--text-dark-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#footer-contact small {
+    font-size: 0.75rem;
+    color: var(--text-dark-muted);
+    margin-top: 8px;
+}
+
+/* ==========================================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================================================== */
+#floating-whatsapp-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    transition: transform 0.2s ease;
+}
+
+#floating-whatsapp-btn:hover {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+@media (min-width: 768px) {
+    #desktop-nav {
+        display: flex;
+    }
+
+    #header-cta-btn {
+        display: inline-block;
+    }
+
+    #mobile-menu-btn {
+        display: none;
+    }
+
+    #hero-title {
+        font-size: 4rem;
+    }
+
+    #estudio-container {
+        grid-template-columns: 7fr 5fr;
+        gap: 64px;
+    }
+
+    #areas-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #areas-list article:last-child {
+        grid-column: span 2;
+    }
+
+    #quote-text {
+        font-size: 2.3rem;
+    }
+
+    #contacto-container {
+        grid-template-columns: 5fr 7fr;
+        gap: 64px;
+    }
+
+    #form-row-personal,
+    #form-row-topic {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #footer-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #footer-contact {
+        text-align: right;
+    }
+}
+
+@media (min-width: 1024px) {
+    #areas-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #areas-list article:last-child {
+        grid-column: span 1;
+    }
+}
