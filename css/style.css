@@ -671,3 +671,189 @@ a {
         grid-column: span 1;
     }
 }
+/* ==========================================================================
+   RESEÑAS / OPINIONES DE GOOGLE
+   ========================================================================== */
+#reviews-section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 90px 0;
+    border-top: 1px solid var(--border-dark);
+}
+
+#reviews-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+#reviews-header {
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+#google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+#reviews-title {
+    font-family: var(--font-heading);
+    font-size: 2.3rem;
+    margin-bottom: 14px;
+}
+
+#reviews-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+#score-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+#score-stars {
+    color: #f59e0b; /* Amarillo estrella de Google */
+    font-size: 1rem;
+    display: flex;
+    gap: 4px;
+}
+
+#score-count {
+    color: var(--text-light-muted);
+    font-size: 0.8rem;
+}
+
+#reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+#reviews-grid article {
+    background-color: var(--bg-dark-surface);
+    border: 1px solid var(--border-dark);
+    padding: 32px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#reviews-grid article div[id$="-header"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#reviews-grid strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+#reviews-grid small {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#reviews-grid div[id$="-stars"] {
+    color: #f59e0b;
+    font-size: 0.8rem;
+}
+
+#reviews-grid p {
+    font-size: 0.9rem;
+    color: var(--text-light-muted);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   UBICACIÓN & MAPA EMBEBIDO
+   ========================================================================== */
+#location-section {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 90px 0;
+    border-top: 1px solid var(--border-light);
+}
+
+#location-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+#location-heading {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+#location-address {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+#location-details {
+    font-size: 0.92rem;
+    color: var(--text-dark-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+#location-btn {
+    display: inline-block;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 14px 28px;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+#location-btn:hover {
+    background-color: #000000;
+}
+
+#map-wrapper {
+    border: 1px solid var(--border-light);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    #reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #location-container {
+        grid-template-columns: 5fr 7fr;
+        gap: 56px;
+    }
+}
