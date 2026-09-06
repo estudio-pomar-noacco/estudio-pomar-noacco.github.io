@@ -1,0 +1,52 @@
+{
+  "general": {
+    "nombre_profesional": "Dr. Ignacio Pomar Noacco",
+    "subtitulo_perfil": "Abogado • Matriculado | Especialista en Litigación",
+    "matricula_cpacf": "T° 157 F° 683",
+    "matricula_casm": "T° 27 F° 16",
+    "email": "ignaciopomarnoacco@gmail.com",
+    "telefono_display": "+54 9 11 3004-3663",
+    "telefono_raw": "5491130043663",
+    "jurisdiccion": "Ciudad Autónoma de Buenos Aires (CABA) y Provincia de Buenos Aires",
+    "zona_atencion": "Tribunales — CABA & Provincia de Buenos Aires",
+    "detalle_atencion": "Consultas presenciales con cita previa en zona Tribunales y atención virtual coordinada para todo el país."
+  },
+  "hero": {
+    "titulo": "Representación jurídica con estrategia y compromiso"
+  },
+  "estudio": {
+    "heading": "Defensa estratégica y patrocinio jurídico integral con rigor técnico.",
+    "intro": "Asesoramiento y patrocinio en Derecho Penal y Derecho de Familia. Defensa de personas imputadas, representación de víctimas y litigación en conflictos familiares.",
+    "detail": "Atención personalizada con enfoque técnico y resolución rápida para resguardar sus derechos. Abogado UBA y Docente Universitario."
+  },
+  "cita": {
+    "texto": "“La rigurosidad técnica y la diligencia procesal son la única garantía real en la defensa de los derechos individuales.”",
+    "autor": "— Estudio Jurídico Dr. Ignacio Pomar Noacco"
+  },
+  "areas": {
+    "penal": {
+      "titulo": "Derecho Penal",
+      "descripcion": "Defensa penal y representación de víctimas. Querellas y patrocinio a víctimas, delitos de alta complejidad y examen técnico de imputaciones."
+    },
+    "familia": {
+      "titulo": "Derecho de Familia",
+      "descripcion": "Conflictos familiares y medidas de protección. Protecciones por violencia familiar, cuota alimentaria, cuidado personal y régimen de comunicación."
+    },
+    "litigacion": {
+      "titulo": "Litigación y Estrategia Procesal",
+      "descripcion": "Análisis y conducción jurídica de casos complejos. Análisis integral del expediente, elaboración de estrategias procesales y recursos judiciales."
+    },
+    "laboral": {
+      "titulo": "Laboral & Consumidor",
+      "descripcion": "Reclamos por despidos, accidentes de trabajo, diferencias salariales y acuerdos extrajudiciales. Conciliaciones (SECLO / Ministerio) y Defensa del Consumidor (COPREC)."
+    },
+    "sucesiones": {
+      "titulo": "Sucesiones & Contratos",
+      "descripcion": "Inicio y tramitación de juicios sucesorios en CABA y Provincia de Buenos Aires. Inscripción de declaratoria de herederos y redacción de contratos civiles y comerciales."
+    },
+    "empresario": {
+      "titulo": "Asesoramiento Empresario",
+      "descripcion": "Consultoría jurídica preventiva para empresas y particulares. Redacción de escritos de alta complejidad, recursos extraordinarios y mediación de conflictos."
+    }
+  }
+}
