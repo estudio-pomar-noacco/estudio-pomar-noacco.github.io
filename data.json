@@ -1,23 +1,23 @@
 {
   "general": {
     "nombre_profesional": "Dr. Ignacio Pomar Noacco",
-    "subtitulo_perfil": "Abogado • Matriculado | Especialista en Litigación",
+    "subtitulo_perfil": "Abogado",
     "matricula_cpacf": "T° 157 F° 683",
     "matricula_casm": "T° 27 F° 16",
-    "email": "ignaciopomarnoacco@gmail.com",
+    "email": "pomar.noacco@gmail.com",
     "telefono_display": "+54 9 11 3004-3663",
     "telefono_raw": "5491130043663",
-    "jurisdiccion": "Ciudad Autónoma de Buenos Aires (CABA) y Provincia de Buenos Aires",
+    "jurisdiccion": "Federal, Ciudad Autónoma de Buenos Aires (CABA) y Provincia de Buenos Aires",
     "zona_atencion": "Tribunales — CABA & Provincia de Buenos Aires",
-    "detalle_atencion": "Consultas presenciales con cita previa en zona Tribunales y atención virtual coordinada para todo el país."
+    "detalle_atencion": "Consultas presenciales con cita previa y atención virtual coordinada para todo el país."
   },
   "hero": {
-    "titulo": "Representación jurídica con estrategia y compromiso"
+    "titulo": "Asesoramiento y patrocinio jurídico"
   },
   "estudio": {
-    "heading": "Defensa estratégica y patrocinio jurídico integral con rigor técnico.",
-    "intro": "Asesoramiento y patrocinio en Derecho Penal y Derecho de Familia. Defensa de personas imputadas, representación de víctimas y litigación en conflictos familiares.",
-    "detail": "Atención personalizada con enfoque técnico y resolución rápida para resguardar sus derechos. Abogado UBA y Docente Universitario."
+    "heading": "Defensa y representación jurídica",
+    "intro": "Intervención en casos de Derecho Penal y Derecho de Familia con especial atención a la estrategia del caso, la defensa y representación letrada. \n\nUn abordaje jurídico riguroso, personalizado y orientado a las particulares de cada situación.",
+    "detail": "Abogado - Universidad de Buenos Aires"
   },
   "cita": {
     "texto": "“La rigurosidad técnica y la diligencia procesal son la única garantía real en la defensa de los derechos individuales.”",
@@ -26,15 +26,15 @@
   "areas": {
     "penal": {
       "titulo": "Derecho Penal",
-      "descripcion": "Defensa penal y representación de víctimas. Querellas y patrocinio a víctimas, delitos de alta complejidad y examen técnico de imputaciones."
+      "descripcion": "Defensa penal y representación de víctimas. Asistencia y patrocinio durante las distintas etapas del proceso, intervención en querellas y elaboración de estrategias de defensas y acusación."
     },
     "familia": {
       "titulo": "Derecho de Familia",
-      "descripcion": "Conflictos familiares y medidas de protección. Protecciones por violencia familiar, cuota alimentaria, cuidado personal y régimen de comunicación."
+      "descripcion": "Asesoramiento y patrocinio integral en materia de familia. Intervención en procesos y conflictos familiares, con especial atención a las circunstancias particulares de cada caso y a la protección de los derechos."
     },
     "litigacion": {
-      "titulo": "Litigación y Estrategia Procesal",
-      "descripcion": "Análisis y conducción jurídica de casos complejos. Análisis integral del expediente, elaboración de estrategias procesales y recursos judiciales."
+      "titulo": "Otras áreas de práctica",
+      "descripcion": "Atención en materia de Derecho Laboral, Civil y Comercial, amparos de salud y reclamos extrajudiciales o judiciales."
     },
     "laboral": {
       "titulo": "Laboral & Consumidor",
