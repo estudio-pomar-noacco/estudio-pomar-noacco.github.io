@@ -5,7 +5,7 @@
     --bg-dark: #181818;          /* Carbón profundo */
     --bg-dark-surface: #222222;  /* Superficie oscura para tarjetas e inputs */
     --bg-light: #eae7df;         /* Lino / Hueso cálido */
-    --bg-light-card: #ffffff;    /* Blanco puro para tarjeta de perfil */
+    --bg-light-card: #ffffff;    /* Blanco puro para tarjetas */
     
     --accent: #bda47e;           /* Bronce tenue para detalles sutiles */
     --accent-hover: #ffffff;     /* Blanco en hover */
@@ -149,11 +149,11 @@ a {
 }
 
 /* ==========================================================================
-   HERO
+   HERO (SIEMPRE DESTACADO EN CARBÓN)
    ========================================================================== */
 #hero-section {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--bg-dark) !important;
+    color: var(--text-light) !important;
     padding: 110px 0 90px 0;
     width: 100%;
     overflow: hidden;
@@ -173,27 +173,202 @@ a {
 
 #hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.85rem, 6.5vw, 2.8rem);
+    font-size: clamp(1.85rem, 4.8vw, 3.2rem);
     font-weight: 600;
-    line-height: 1.18;
+    line-height: 1.2;
     letter-spacing: -0.01em;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
     word-break: normal;
-    hyphens: auto;
+    hyphens: manual; /* Evita que el navegador corte palabras con guiones automáticos */
+    color: var(--text-light) !important;
 }
 
 /* ==========================================================================
-   ESTUDIO
+   ALTERNANCIA DINÁMICA DE SECCIONES (LINO / CARBÓN)
    ========================================================================== */
-#estudio {
+
+/* Padding uniforme para todas las secciones posteriores al Hero */
+main > section:not(#hero-section) {
     padding: 95px 0;
-    background-color: var(--bg-light);
+    width: 100%;
 }
 
-#estudio-container {
+/* 1. SECCIONES DE POSICIÓN PAR (Ej: #estudio, #reviews-section): FONDO LINO CLARO */
+main > section:nth-of-type(even) {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border-top: 1px solid var(--border-light);
+}
+
+main > section:nth-of-type(even) h2,
+main > section:nth-of-type(even) h3 {
+    color: var(--text-dark);
+}
+
+main > section:nth-of-type(even) p,
+main > section:nth-of-type(even) #estudio-detail,
+main > section:nth-of-type(even) #contacto-description {
+    color: var(--text-dark-muted);
+}
+
+main > section:nth-of-type(even) #estudio-intro {
+    color: var(--text-dark);
+}
+
+/* Títulos con borde en tema claro */
+main > section:nth-of-type(even) #areas-heading {
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Tarjetas de Áreas en sección clara */
+main > section:nth-of-type(even) #areas-list article {
+    background-color: var(--bg-light-card);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+main > section:nth-of-type(even) #areas-list article h3 {
+    color: var(--text-dark);
+}
+
+main > section:nth-of-type(even) #areas-list article p {
+    color: var(--text-dark-muted);
+}
+
+/* Botones en sección clara */
+main > section:nth-of-type(even) #estudio-cta-btn,
+main > section:nth-of-type(even) #areas-cta-btn,
+main > section:nth-of-type(even) #location-btn,
+main > section:nth-of-type(even) #form-submit-btn {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+main > section:nth-of-type(even) #estudio-cta-btn:hover,
+main > section:nth-of-type(even) #areas-cta-btn:hover,
+main > section:nth-of-type(even) #location-btn:hover,
+main > section:nth-of-type(even) #form-submit-btn:hover {
+    background-color: #000000;
+}
+
+/* Inputs de Formulario en sección clara */
+main > section:nth-of-type(even) #contact-form input,
+main > section:nth-of-type(even) #contact-form select,
+main > section:nth-of-type(even) #contact-form textarea {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+}
+
+main > section:nth-of-type(even) #contact-form input::placeholder,
+main > section:nth-of-type(even) #contact-form textarea::placeholder {
+    color: #888888;
+}
+
+main > section:nth-of-type(even) #contact-form select option {
+    background-color: #ffffff;
+    color: var(--text-dark);
+}
+
+
+/* 2. SECCIONES DE POSICIÓN IMPAR (Ej: #areas, #contacto): FONDO CARBÓN OSCURO */
+main > section:nth-of-type(odd):not(#hero-section) {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border-top: 1px solid var(--border-dark);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) h2,
+main > section:nth-of-type(odd):not(#hero-section) h3 {
+    color: var(--text-light);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) p,
+main > section:nth-of-type(odd):not(#hero-section) #estudio-detail,
+main > section:nth-of-type(odd):not(#hero-section) #contacto-description {
+    color: var(--text-light-muted);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) #estudio-intro {
+    color: var(--text-light);
+}
+
+/* Títulos con borde en tema oscuro */
+main > section:nth-of-type(odd):not(#hero-section) #areas-heading {
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+/* Tarjetas de Áreas en sección oscura */
+main > section:nth-of-type(odd):not(#hero-section) #areas-list article {
+    background-color: var(--bg-dark-surface);
+    border: 1px solid var(--border-dark);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) #areas-list article:hover {
+    border-color: var(--border-dark-hover);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) #areas-list article h3 {
+    color: var(--text-light);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) #areas-list article p {
+    color: var(--text-light-muted);
+}
+
+/* Botones en sección oscura */
+main > section:nth-of-type(odd):not(#hero-section) #estudio-cta-btn,
+main > section:nth-of-type(odd):not(#hero-section) #areas-cta-btn,
+main > section:nth-of-type(odd):not(#hero-section) #location-btn,
+main > section:nth-of-type(odd):not(#hero-section) #form-submit-btn {
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) #estudio-cta-btn:hover,
+main > section:nth-of-type(odd):not(#hero-section) #areas-cta-btn:hover,
+main > section:nth-of-type(odd):not(#hero-section) #location-btn:hover,
+main > section:nth-of-type(odd):not(#hero-section) #form-submit-btn:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+/* Inputs de Formulario en sección oscura */
+main > section:nth-of-type(odd):not(#hero-section) #contact-form input,
+main > section:nth-of-type(odd):not(#hero-section) #contact-form select,
+main > section:nth-of-type(odd):not(#hero-section) #contact-form textarea {
+    background-color: var(--bg-dark-surface);
+    border: 1px solid var(--border-dark);
+    color: var(--text-light);
+}
+
+main > section:nth-of-type(odd):not(#hero-section) #contact-form input::placeholder,
+main > section:nth-of-type(odd):not(#hero-section) #contact-form textarea::placeholder {
+    color: #737373;
+}
+
+main > section:nth-of-type(odd):not(#hero-section) #contact-form select option {
+    background-color: #181818;
+    color: #f1f5f9;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE CONTENEDORES Y ELEMENTOS ESPECÍFICOS
+   ========================================================================== */
+#estudio-container,
+#areas-container,
+#reviews-container,
+#location-container,
+#contacto-container {
     max-width: var(--max-w);
     margin: 0 auto;
     padding: 0 24px;
+}
+
+/* Estudio */
+#estudio-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 56px;
@@ -205,36 +380,27 @@ a {
     font-weight: 600;
     line-height: 1.25;
     margin-bottom: 20px;
-    color: var(--text-dark);
 }
 
 #estudio-intro {
     font-size: 1.05rem;
-    color: var(--text-dark);
     margin-bottom: 16px;
 }
 
 #estudio-detail {
     font-size: 0.95rem;
-    color: var(--text-dark-muted);
     margin-bottom: 28px;
 }
 
 #estudio-cta-btn {
     display: inline-block;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
     padding: 14px 32px;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 600;
     border-radius: 2px;
-    transition: background-color 0.2s ease;
-}
-
-#estudio-cta-btn:hover {
-    background-color: #000000;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #estudio-profile-card {
@@ -267,14 +433,14 @@ a {
     font-family: var(--font-heading);
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-dark) !important;
 }
 
 #profile-role {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-dark-muted);
+    color: var(--text-dark-muted) !important;
     font-weight: 600;
     margin-top: 4px;
 }
@@ -287,7 +453,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    color: var(--text-dark-muted);
+    color: var(--text-dark-muted) !important;
 }
 
 #profile-credentials h4,
@@ -295,34 +461,18 @@ a {
     font-family: var(--font-heading);
     font-size: 0.85rem;
     letter-spacing: 0.05em;
-    color: var(--text-dark);
+    color: var(--text-dark) !important;
     margin-bottom: 4px;
 }
 
-/* ==========================================================================
-   ÁREAS DE PRÁCTICA
-   ========================================================================== */
-#areas {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    padding: 100px 0;
-}
-
-#areas-container {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
+/* Áreas de Trabajo */
 #areas-heading {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 48px;
     letter-spacing: 0.02em;
-    border-bottom: 1px solid var(--border-dark);
     padding-bottom: 20px;
-    color: var(--text-light);
 }
 
 #areas-list {
@@ -332,8 +482,6 @@ a {
 }
 
 #areas-list article {
-    background-color: var(--bg-dark-surface);
-    border: 1px solid var(--border-dark);
     padding: 36px;
     border-radius: 2px;
     transition: transform 0.2s ease, border-color 0.2s ease;
@@ -341,20 +489,17 @@ a {
 
 #areas-list article:hover {
     transform: translateY(-2px);
-    border-color: var(--border-dark-hover);
 }
 
 #areas-list h3 {
     font-family: var(--font-heading);
     font-size: 1.35rem;
-    color: var(--text-light);
     margin-bottom: 12px;
     font-weight: 600;
 }
 
 #areas-list p {
     font-size: 0.92rem;
-    color: var(--text-light-muted);
     line-height: 1.65;
 }
 
@@ -364,8 +509,6 @@ a {
 
 #areas-cta-btn {
     display: inline-block;
-    background-color: var(--text-light);
-    color: var(--text-dark);
     padding: 14px 32px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -375,65 +518,10 @@ a {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-#areas-cta-btn:hover {
-    background-color: var(--accent);
-    color: #ffffff;
-}
-
-/* ==========================================================================
-   CITA
-   ========================================================================== */
-#quote-section {
-    background-color: #dfdcd2;
-    padding: 95px 0;
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
-}
-
-#quote-container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 0 24px;
-    text-align: center;
-}
-
-#quote-text {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    line-height: 1.35;
-    color: var(--text-dark);
-}
-
-#quote-author {
-    display: block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-dark-muted);
-    font-weight: 700;
-    margin-top: 24px;
-    font-style: normal;
-}
-
-/* ==========================================================================
-   RESEÑAS / OPINIONES DE GOOGLE
-   ========================================================================== */
-#reviews-section {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    padding: 90px 0;
-    border-top: 1px solid var(--border-dark);
-}
-
-#reviews-container {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
+/* Reseñas / Opiniones */
 #reviews-header {
     text-align: center;
-    margin-bottom: 54px;
+    margin-bottom: 48px;
 }
 
 #google-badge {
@@ -451,177 +539,10 @@ a {
 #reviews-title {
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 5vw, 2.3rem);
-    margin-bottom: 14px;
 }
 
-#reviews-score {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-#score-number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-light);
-}
-
-#score-stars {
-    color: #f59e0b;
-    font-size: 1rem;
-    display: flex;
-    gap: 4px;
-}
-
-#score-count {
-    color: var(--text-light-muted);
-    font-size: 0.8rem;
-}
-
-#reviews-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-}
-
-#reviews-grid article {
-    background-color: var(--bg-dark-surface);
-    border: 1px solid var(--border-dark);
-    padding: 32px;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-#reviews-grid article div[id$="-header"] {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-#reviews-grid strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--text-light);
-}
-
-#reviews-grid small {
-    font-size: 0.75rem;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-#reviews-grid div[id$="-stars"] {
-    color: #f59e0b;
-    font-size: 0.8rem;
-}
-
-#reviews-grid p {
-    font-size: 0.9rem;
-    color: var(--text-light-muted);
-    line-height: 1.6;
-    font-style: italic;
-}
-
-/* ==========================================================================
-   UBICACIÓN & MAPA EMBEBIDO (RESPONSIVE & CENTRADO)
-   ========================================================================== */
-#location-section {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    padding: 80px 0;
-    border-top: 1px solid var(--border-light);
-    width: 100%;
-    overflow: hidden;
-}
-
-#location-container {
-    max-width: var(--max-w);
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-#location-heading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 5vw, 2.2rem);
-    margin-bottom: 16px;
-    color: var(--text-dark);
-}
-
-#location-address {
-    font-size: 1rem;
-    color: var(--text-dark);
-    margin-bottom: 10px;
-}
-
-#location-details {
-    font-size: 0.92rem;
-    color: var(--text-dark-muted);
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
-
-#location-btn {
-    display: inline-block;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    padding: 14px 28px;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: background-color 0.2s ease;
-}
-
-#location-btn:hover {
-    background-color: #000000;
-}
-
-#map-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    border: 1px solid var(--border-light);
-    border-radius: 4px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    line-height: 0;
-    box-sizing: border-box;
-}
-
-#map-wrapper iframe,
-#google-map-iframe {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    height: 380px;
-    display: block;
-    border: 0;
-}
-
-/* ==========================================================================
-   CONTACTO
-   ========================================================================== */
-#contacto {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    padding: 100px 0;
-}
-
+/* Contacto */
 #contacto-container {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 24px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 48px;
@@ -632,12 +553,11 @@ a {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 16px;
-    color: var(--text-light);
 }
 
 #contacto-description {
     font-size: 0.95rem;
-    color: var(--text-light-muted);
+    margin-bottom: 8px;
 }
 
 #contact-form {
@@ -653,40 +573,22 @@ a {
     gap: 16px;
 }
 
-/* ==========================================================================
-   FORMULARIO DE CONTACTO (INPUTS, SELECT Y TEXTAREA)
-   ========================================================================== */
 #contact-form input,
 #contact-form select,
 #contact-form textarea {
     width: 100%;
-    background-color: var(--bg-dark-surface);
-    border: 1px solid var(--border-dark);
     padding: 14px 16px;
     font-family: var(--font-body);
     font-size: 0.88rem;
-    color: var(--text-light);
     outline: none;
     border-radius: 2px;
     transition: border-color 0.2s ease;
-}
-
-#contact-form input::placeholder,
-#contact-form textarea::placeholder {
-    color: #737373;
-}
-
-#contact-form input:focus,
-#contact-form select:focus,
-#contact-form textarea:focus {
-    border-color: var(--text-light);
 }
 
 #contact-form textarea {
     resize: none;
 }
 
-/* Estilizado personalizado del Select */
 #contact-form select {
     appearance: none;
     -webkit-appearance: none;
@@ -699,26 +601,12 @@ a {
     padding-right: 44px;
 }
 
-#contact-form select:focus {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-}
-
 #contact-form select option {
-    background-color: #181818;
-    color: #f1f5f9;
     padding: 12px 16px;
     font-size: 0.88rem;
 }
 
-#contact-form select option:hover,
-#contact-form select option:checked {
-    background-color: #262626;
-    color: #ffffff;
-}
-
 #form-submit-btn {
-    background-color: var(--text-light);
-    color: var(--text-dark);
     border: none;
     padding: 16px 32px;
     font-family: var(--font-body);
@@ -730,11 +618,6 @@ a {
     border-radius: 2px;
     align-self: flex-start;
     transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#form-submit-btn:hover {
-    background-color: var(--accent);
-    color: #ffffff;
 }
 
 /* ==========================================================================
@@ -766,6 +649,7 @@ a {
     font-size: 0.75rem;
     color: var(--text-dark-muted);
     margin-top: 4px;
+    line-height: 1.6;
 }
 
 #footer-details,
@@ -825,7 +709,7 @@ a {
     }
 
     #hero-title {
-        font-size: 4rem;
+        font-size: 3.2rem;
     }
 
     #estudio-container {
@@ -835,19 +719,6 @@ a {
 
     #areas-list {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    #quote-text {
-        font-size: 2.3rem;
-    }
-
-    #reviews-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    #location-container {
-        grid-template-columns: 5fr 7fr;
-        gap: 56px;
     }
 
     #contacto-container {
@@ -873,4 +744,16 @@ a {
     #areas-list {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+/* Negritas sutiles y elegantes en tarjetas oscuras */
+#areas-list article strong,
+main > section:nth-of-type(odd):not(#hero-section) strong {
+    color: #e6e3da !important;  /* Blanco lino suave, no chillón */
+    font-weight: 600 !important; /* Peso medio que no engorda la letra */
+    letter-spacing: 0.01em;
+}
+
+#areas-list article strong {
+    color: var(--accent) !important; /* Tono bronce editorial */
+    font-weight: 600 !important;
 }
