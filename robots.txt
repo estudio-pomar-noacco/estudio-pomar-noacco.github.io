@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://estudio-pomar-noacco.github.io/sitemap.xml
