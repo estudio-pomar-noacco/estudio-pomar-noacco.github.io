@@ -24,9 +24,9 @@
             <a href="#" id="brand-logo">Dr. Ignacio Pomar Noacco</a>
 
             <nav id="desktop-nav">
-                <a href="#estudio">Inicio</a>
+                <a href="#hero-section">Inicio</a>
+                <a href="#estudio">Perfil</a>
                 <a href="#areas">Áreas de Trabajo</a>
-                <a href="#trayectoria">Perfil</a>
                 <a href="#contacto">Contacto</a>
             </nav>
 
@@ -38,9 +38,9 @@
         </div>
 
         <nav id="mobile-nav">
-            <a href="#estudio">Inicio</a>
+            <a href="#hero-section">Inicio</a>
+            <a href="#estudio">Perfil</a>
             <a href="#areas">Áreas de Trabajo</a>
-            <a href="#trayectoria">Perfil</a>
             <a href="#contacto">Contacto</a>
             <a href="https://wa.me/5491130043663?text=Hola%20Dr.%20Ignacio%20Pomar,%20necesito%20una%20consulta%20legal." target="_blank" id="mobile-whatsapp-link">Escribir por WhatsApp</a>
         </nav>
@@ -152,15 +152,39 @@
                 </div>
 
                 <div id="contacto-form-wrapper">
-                    <form id="contact-form">
+                    <form id="contact-form" novalidate>
                         <div id="form-row-personal">
-                            <input type="text" id="form-name" required placeholder="Nombre Completo *">
-                            <input type="tel" id="form-phone" required placeholder="Teléfono / WhatsApp *">
+                            <input 
+                                type="text" 
+                                id="form-name" 
+                                required 
+                                placeholder="Nombre Completo *"
+                                minlength="3"
+                                maxlength="60"
+                                pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"
+                                autocomplete="name">
+
+                            <input 
+                                type="tel" 
+                                id="form-phone" 
+                                required 
+                                placeholder="Teléfono / WhatsApp *"
+                                minlength="8"
+                                maxlength="20"
+                                pattern="^[\d\s\+\-\(\)]+$"
+                                autocomplete="tel">
                         </div>
 
                         <div id="form-row-topic">
-                            <input type="email" id="form-email" placeholder="Email">
+                            <input 
+                                type="email" 
+                                id="form-email" 
+                                placeholder="Email (opcional)"
+                                maxlength="80"
+                                autocomplete="email">
+
                             <select id="form-materia" required>
+                                <option value="" disabled selected>Seleccione el área legal *</option>
                                 <option value="Penal">Derecho Penal</option>
                                 <option value="Familia">Derecho de Familia</option>
                                 <option value="Violencia">Violencia</option>
@@ -170,7 +194,16 @@
                             </select>
                         </div>
 
-                        <textarea id="form-message" rows="4" required placeholder="Escriba brevemente los detalles de su situación legal..."></textarea>
+                        <textarea 
+                            id="form-message" 
+                            rows="4" 
+                            required 
+                            minlength="15"
+                            maxlength="1000"
+                            placeholder="Escriba brevemente los detalles de su situación legal (mínimo 15 caracteres)..."></textarea>
+
+                        <!-- Contenedor opcional para mensajes de error legibles -->
+                        <p id="form-error-msg" style="display:none; color: #ff6b6b; font-size: 0.85rem; margin-top: -8px;"></p>
 
                         <button type="submit" id="form-submit-btn">Enviar Consulta Legal</button>
                     </form>

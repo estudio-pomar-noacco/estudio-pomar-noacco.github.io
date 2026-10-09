@@ -48,7 +48,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
+html {
+    scroll-padding-top: 84px;
+}
 /* ==========================================================================
    HEADER
    ========================================================================== */
@@ -56,8 +58,10 @@ a {
     background-color: var(--bg-dark);
     color: var(--text-light);
     border-bottom: 1px solid var(--border-dark);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
 }
 
@@ -154,7 +158,7 @@ a {
 #hero-section {
     background-color: var(--bg-dark) !important;
     color: var(--text-light) !important;
-    padding: 110px 0 90px 0;
+    padding: 170px 0 90px 0; /* Aumentado arriba para compensar los 84px del header */
     width: 100%;
     overflow: hidden;
 }
@@ -756,4 +760,13 @@ main > section:nth-of-type(odd):not(#hero-section) strong {
 #areas-list article strong {
     color: var(--accent) !important; /* Tono bronce editorial */
     font-weight: 600 !important;
+}
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+    border-color: var(--accent) !important;
+}
+
+#contact-form select:invalid {
+    color: #737373;
 }
