@@ -11,30 +11,78 @@
     <meta name="author" content="Dr. Ignacio Pomar Noacco">
     <meta name="robots" content="index, follow">
 
-    <!-- URL Canónica (Actualizar con el dominio o URL final cuando transfieras el repo) -->
+    <!-- URL Canónica -->
     <link rel="canonical" href="https://estudio-pomar-noacco.github.io/">
 
-    <!-- Metadatos Open Graph (Para vista previa en WhatsApp, Facebook, LinkedIn) -->
+    <!-- Favicon e Íconos de la pestaña / ventana (con versión para forzar actualización inmediata) -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="shortcut icon" type="image/png" href="img/logo.png">
+    <link rel="apple-touch-icon" href="img/logo.png">
+
+    <!-- Metadatos Open Graph (Vista previa en WhatsApp, Facebook, LinkedIn) -->
     <meta property="og:locale" content="es_AR">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Dr. Ignacio Pomar Noacco | Abogado - Asesoramiento y Patrocinio Jurídico">
     <meta property="og:description" content="Atención en casos de Derecho Penal, Familia, Amparos de Salud y Litigios Complejos en CABA y Provincia de Buenos Aires.">
     <meta property="og:url" content="https://estudio-pomar-noacco.github.io/">
     <meta property="og:site_name" content="Estudio Jurídico Dr. Ignacio Pomar Noacco">
-    <meta property="og:image" content="https://estudio-pomar-noacco.github.io/img/perfil.png">
-    <meta property="og:image:alt" content="Dr. Ignacio Pomar Noacco - Abogado">
+    <meta property="og:image" content="https://estudio-pomar-noacco.github.io/img/logo.png">
+    <meta property="og:image:alt" content="Pomar Noacco Abogado - Logo">
 
     <!-- Metadatos Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dr. Ignacio Pomar Noacco | Abogado">
     <meta name="twitter:description" content="Defensa penal, derecho de familia y litigios complejos en CABA y PBA.">
-    <meta name="twitter:image" content="https://estudio-pomar-noacco.github.io/img/perfil.png">
+    <meta name="twitter:image" content="https://estudio-pomar-noacco.github.io/img/logo.png">
 
-    <!-- Favicon (ícono de la pestaña del navegador) -->
-    <link rel="icon" type="image/png" href="img/perfil.png">
-
-    <!-- Google Search Console (Pega aquí la etiqueta meta que te proporcione Google) -->
-    <!-- <meta name="google-site-verification" content="TU_CODIGO_DE_VERIFICACION_AQUI" /> -->
+    <!-- Datos Estructurados JSON-LD (Para Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://estudio-pomar-noacco.github.io/#website",
+          "url": "https://estudio-pomar-noacco.github.io/",
+          "name": "Estudio Jurídico Dr. Ignacio Pomar Noacco",
+          "alternateName": ["Dr. Ignacio Pomar Noacco", "Ignacio Pomar Abogado", "Estudio Pomar Noacco"]
+        },
+        {
+          "@type": "LegalService",
+          "@id": "https://estudio-pomar-noacco.github.io/#organization",
+          "name": "Dr. Ignacio Pomar Noacco - Abogado",
+          "url": "https://estudio-pomar-noacco.github.io/",
+          "logo": "https://estudio-pomar-noacco.github.io/img/logo.png",
+          "image": "https://estudio-pomar-noacco.github.io/img/logo.png",
+          "telephone": "+5491130043663",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Asamblea",
+            "addressLocality": "Santos Lugares",
+            "addressRegion": "Buenos Aires",
+            "postalCode": "B1676",
+            "addressCountry": "AR"
+          },
+          "areaServed": [
+            "Ciudad Autónoma de Buenos Aires",
+            "Provincia de Buenos Aires",
+            "Santos Lugares",
+            "San Martín",
+            "Tres de Febrero"
+          ],
+          "knowsAbout": [
+            "Derecho Penal",
+            "Querellas y Defensa Penal",
+            "Derecho de Familia",
+            "Litigios Complejos",
+            "Amparos de Salud",
+            "Derecho Laboral"
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +145,7 @@
                 <article id="estudio-main-text">
                     <h2 id="estudio-heading">Defensa y representación jurídica</h2>
                     <p id="estudio-intro">Intervención en casos de Derecho Penal y Derecho de Familia con especial atención a la estrategia del caso, la defensa y representación letrada.</p>
-                    <p id="estudio-intro">Un abordaje jurídico riguroso, personalizado y orientado a las particulares de cada situación.</p>
+                    <p id="estudio-intro">Un abordaje jurídico riguroso, personalizado y orientado a las particularidades de cada situación.</p>
                     <p id="estudio-detail">Abogado - Universidad de Buenos Aires</p>
                     <div>
                         <a href="https://wa.me/5491130043663?text=Hola%20Dr.%20Ignacio%20Pomar,%20deseo%20realizar%20una%20consulta%20por%20un%20caso." target="_blank" id="estudio-cta-btn">Consulta por WhatsApp</a>
@@ -158,7 +206,6 @@
             </div>
         </section>
 
-
         <!-- Prueba Social & Reseñas de Google (Elfsight Live Widget) -->
         <section id="reviews-section">
             <div id="reviews-container">
@@ -173,7 +220,6 @@
                 <div class="elfsight-app-1279de08-de65-419d-b7f0-25db209bdbd7" data-elfsight-app-lazy></div>
             </div>
         </section>
-
         
         <!-- Contacto -->
         <section id="contacto">
@@ -236,7 +282,6 @@
                             maxlength="1000"
                             placeholder="Escriba brevemente los detalles de su situación legal (mínimo 15 caracteres)..."></textarea>
 
-                        <!-- Contenedor opcional para mensajes de error legibles -->
                         <p id="form-error-msg" style="display:none; color: #ff6b6b; font-size: 0.85rem; margin-top: -8px;"></p>
 
                         <button type="submit" id="form-submit-btn">Enviar Consulta Legal</button>
